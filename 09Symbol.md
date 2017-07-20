@@ -38,7 +38,7 @@ var a= {};
 a[mySymbol] = 'Hello!';
 
 var a = {
-    [mySymbol]: 'Hello!';
+    [mySymbol]: 'Hello!'
 };
 
 var a {
@@ -129,4 +129,23 @@ var obj = {
 Reflect.ownKeys(obj); // ['enum', 'nonEnum', Symbol('my_key')]
 ```
 ## 5、Symbol.for() , Symbol.keyFor()
+`Symbol.for()`可以让我们重新使用一个新的`Symbol`值。
 
+先搜索，后创建或使用。
+```javascript
+var s1 = Symbol.for('foo');
+var s2 = Symbol.for('foo');
+
+s1 === s2; // true
+```
+`Symbol.keyFor()`配套使用。
+```javascript
+var s1 = Symbol.for('foo');
+Symbol.keyFor(s1); // 'foo'
+
+var s2 = Symbol('foo');
+Symbol.keyFor(s2); // undefined
+```
+## 6、解决一开始的问题
+```javascript
+```
